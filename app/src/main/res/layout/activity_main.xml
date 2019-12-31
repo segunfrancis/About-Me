@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:paddingStart="@dimen/padding"
+        android:paddingEnd="@dimen/padding"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/NameStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/star_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:contentDescription="@string/yellow_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nickname_text"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/star_image">
+
+            <TextView
+                android:id="@+id/bio_text"
+                style="@style/NameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/bio" />
+        </ScrollView>
+
+        <EditText
+            android:id="@+id/nickname_edit"
+            style="@style/NameStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/what_is_your_nickname"
+            android:inputType="textMultiLine|textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/done_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nickname_edit" />
+
+        <TextView
+            android:id="@+id/nickname_text"
+            style="@style/NameStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/done_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
